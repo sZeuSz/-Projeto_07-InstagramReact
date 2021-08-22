@@ -1,17 +1,13 @@
-import Topo from './Topo';
-import Stories from './Stories'
-import Posts from './Posts';
+import Topo from './Header';
+import Bottombar from './Bottombar';
+import Corpo from './Body';
 
 export default function App () {
     return (
         <div>
             <Topo/>
-            <div class="corpo">
-                <div class="esquerda">
-                    <Stories/>
-                    <Posts/>
-                </div>
-            </div>
+            <Corpo/>
+            <Bottombar/>
         </div>
     )
 }

@@ -1,21 +1,21 @@
-export default function Post () {
+export default function Post (props) {
 
     return (
         <div class="post">
-            <Topo/>
-            <Conteudo/>
-            <Fundo/>
+            <Topo nome = {props.nome} imgUsuario = {props.imgUsuario}/>
+            <Conteudo imgConteudo = {props.imgConteudo}/>
+            <Fundo imgCurtidas = {props.imgCurtidas} nomeCurtidaReferencia = {props.nomeCurtidaReferencia} qtdPessoasCurtiram = {props.qtdPessoasCurtiram}/>
         </div>
     )
 }
 
-function Topo () {
+function Topo (props) {
 
     return (
         <div class="topo">
             <div class="usuario">
-                  <img src="assets/img/barked.svg" alt=""/>
-                  barked
+                  <img src={props.imgUsuario} alt="img-usuario"/>
+                  {props.nome}
                 </div>
                 <div class="acoes">
                   <ion-icon name="ellipsis-horizontal"></ion-icon>
@@ -23,21 +23,21 @@ function Topo () {
         </div>
     )
 }
-function Conteudo () { 
+function Conteudo (props) { 
 
     return (
         <div class="conteudo">
-            <img src="assets/img/dog.svg"  alt=""/>
+            <img src={props.imgConteudo} alt="img-conteudo"/>
         </div>
     )
 }
 
-function Fundo () {
+function Fundo (props) {
 
     return (
         <div class="fundo">
             <Acoes/>
-            <Curtidas/>
+            <Curtidas imgCurtidas = {props.imgCurtidas} nomeCurtidaReferencia = {props.nomeCurtidaReferencia} qtdPessoasCurtiram = {props.qtdPessoasCurtiram}/>
         </div>
     )
 }
@@ -58,13 +58,13 @@ function Acoes () {
     )
 }
 
-function Curtidas () {
+function Curtidas (props) {
 
     return (
         <div class="curtidas">
-            <img src="assets/img/adorable_animals.svg" alt=""/>
+            <img src={props.imgCurtidas} alt="img-curtidas"/>
             <div class="texto">
-                Curtido por <strong>adorable_animals</strong> e <strong>outras 99.159 pessoas</strong>
+                Curtido por <strong>{props.nomeCurtidaReferencia}</strong> e <strong>outras {props.qtdPessoasCurtiram} pessoas</strong>
             </div>
         </div>
     )
